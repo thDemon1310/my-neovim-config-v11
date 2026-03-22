@@ -14,3 +14,10 @@ keymap.set("n","<A-t>o",":tabnew<CR>",{desc = "Open new tab"})
 keymap.set("n","<A-t>q",":tabclose<CR>",{desc = "Close current tab"}) 
 keymap.set("n","<A-t>n",":tabn<CR>",{desc = "Go to next tab"}) 
 keymap.set("n","<A-t>p",":tabp<CR>",{desc = "Go to previous tab"}) 
+
+-- for moving selected line up and down
+vim.keymap.set("v","K",":m '<-2<CR>gv=gv",{ desc = "moves lines up in visual selection" })
+vim.keymap.set("v","J",":m '>+1<CR>gv=gv",{ desc = "moves lines down in visual selection" })
+
+-- for wraping the word
+vim.keymap.set('n', '<A-x>', ':set wrap!<CR>', { desc = 'Toggle line wrap' })

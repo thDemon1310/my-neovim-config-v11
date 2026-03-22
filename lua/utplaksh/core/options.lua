@@ -37,3 +37,8 @@ opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 opt.splitright = true -- split virtical window to right
 opt.splitbelow = true -- split hozontal wiondow to the bottom
 
+-- Adding option for code wraping
+opt.wrap = false      -- Start with wrap off (default)
+opt.linebreak = true  -- Don't break words in the middle
+opt.breakindent = true -- Indent wrapped lines to match the start of the line
+
