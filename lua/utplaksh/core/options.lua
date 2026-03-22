@@ -23,3 +23,17 @@ opt.smartcase = true -- if you include mixed search in your search, it will have
 
 -- cursorline 
 opt.cursorline = true
+
+-- turn on terminal-gui-color for tokyonight colorscheme to work
+-- (I am using ghostty terminal)
+opt.termguicolors = true
+opt.background = "dark" -- allways use dark colorscheme
+opt.signcolumn = "yes" --  show sign column so that text doesn't shift
+
+--clipboard
+opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+
+--split windows
+opt.splitright = true -- split virtical window to right
+opt.splitbelow = true -- split hozontal wiondow to the bottom
+
