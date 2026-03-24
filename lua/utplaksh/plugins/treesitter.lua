@@ -8,7 +8,7 @@ return {
 
     treesitter.setup({
       ensure_installed = {
-        "javascript", "typescript", "tsx", "html", "css", "json", "php",
+        "javascript", "typescript", "tsx", "html", "css", "json", "prisma",
         "go", "rust", "c", "bash", "dockerfile", "lua", "vim", "vimdoc",
         "query", "markdown", "markdown_inline", "gitignore",
       },
@@ -22,13 +22,13 @@ return {
       incremental_selection = {
         enable = true,
         keymaps = {
-          init_selection = "<C-space>",
+          init_selection = "<C-space>", -- it ctrl+space
           node_incremental = "<C-space>",
           scope_incremental = false,
           node_decremental = "<bs>",
         },
       },
     })
-     vim.treesitter.language.register("bash", "zsh")
+    vim.treesitter.language.register("bash", "zsh")
   end,
 }
