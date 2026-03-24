@@ -1,20 +1,24 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  branch = "master", -- <-- This is the magic line that fixes the crash
+  event = { "BufReadPre", "BufNewFile" },
   build = ":TSUpdate",
   config = function()
-    local ok, treesitter = pcall(require, "nvim-treesitter.configs")
-    if not ok then
-      vim.notify("Timber! Tree-sitter is falling!", vim.log.levels.WARN)
-      return
-    end
+    local treesitter = require("nvim-treesitter.configs")
+
     treesitter.setup({
-      highlight = { enable = true },
-      indent = { enable = true },
       ensure_installed = {
-        "json", "javascript", "typescript", "tsx", "yaml", "html", "css",
-        "prisma", "markdown", "markdown_inline", "svelte", "graphql",
-        "bash", "lua", "vim", "dockerfile", "gitignore", "query", "vimdoc", "c",
+        "javascript", "typescript", "tsx", "html", "css", "json", "php",
+        "go", "rust", "c", "bash", "dockerfile", "lua", "vim", "vimdoc",
+        "query", "markdown", "markdown_inline", "gitignore",
       },
+      sync_install = false,
+      auto_install = true,
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
+      indent = { enable = true },
       incremental_selection = {
         enable = true,
         keymaps = {
@@ -25,6 +29,6 @@ return {
         },
       },
     })
-    vim.treesitter.language.register("bash", "zsh")
+     vim.treesitter.language.register("bash", "zsh")
   end,
 }
