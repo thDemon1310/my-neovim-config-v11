@@ -18,6 +18,7 @@ return {
         indent_markers = {
           enable = true,
         },
+        root_folder_label = false,
         icons = {
           glyphs = {
             folder = {
@@ -31,6 +32,10 @@ return {
       -- explorer to work well with
       -- window splits
       actions = {
+        change_dir = {
+          enable = true,
+          restrict_above_cwd = true,
+        },
         open_file = {
           window_picker = {
             enable = false,
